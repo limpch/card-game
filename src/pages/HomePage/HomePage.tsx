@@ -1,3 +1,9 @@
+import { CardsHolder } from "@/components/game/CardsHolder"
+
 export const HomePage = () => {
-	return <div>HomePage</div>
+	return (
+		<div>
+			<CardsHolder />
+		</div>
+	)
 }
