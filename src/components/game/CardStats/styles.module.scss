@@ -1,0 +1,72 @@
+@use '@/utils/functions.scss' as *;
+
+.stats {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+
+	&__points {
+		position: absolute;
+		top: toRem(-15px);
+		right: toRem(-32.5px);
+		width: toRem(55.74px);
+		height: toRem(26.37px);
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		transform: rotate(-26deg);
+
+		filter: drop-shadow(-11px 4px #0d1625);
+
+		p {
+			transform: rotate(26deg);
+			font-size: 19px;
+			font-weight: 700;
+			line-height: 22.52px;
+			position: relative;
+			margin: 0;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 12px;
+			content: '';
+			background-color: #fff;
+			display: block;
+			width: 32px;
+			height: 100%;
+			transform: skewX(-41deg);
+		}
+	}
+
+	&__container {
+		position: absolute;
+		left: 0;
+		bottom: 0;
+		display: flex;
+		display: flex;
+		gap: 4px;
+		padding: 1px 4px;
+	}
+
+	&__item {
+		display: flex;
+	}
+
+	&__value {
+		font-weight: 700;
+		line-height: toRem(18.96px);
+		text-align: left;
+	}
+
+	&__icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: toRem(8px);
+		height: toRem(8px);
+	}
+}

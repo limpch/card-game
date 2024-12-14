@@ -1,4 +1,5 @@
 .shadow {
-	--shadow-color: #3da47b;
-	filter: drop-shadow(-3px 1px 0 var(--shadow-color));
+	display: flex;
+	height: fit-content;
+	width: fit-content;
 }
