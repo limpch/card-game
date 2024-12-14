@@ -21,6 +21,9 @@ export const fontSizes = {
 	xxl: '24px',
 };
 
+export type TColors = keyof typeof colors;
+export type TFontSizes = keyof typeof fontSizes;
+
 interface IButtonProps {
 	color: TColors;
 	backgroundColor: TColors;
