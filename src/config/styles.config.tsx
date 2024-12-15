@@ -15,17 +15,17 @@ export const colors = {
 export type TColors = keyof typeof colors;
 
 export const fontSizes = {
-	xs: '12px',
-	sm: '14px',
-	md: '16px',
-	lg: '18px',
-	xl: '20px',
-	xxl: '24px',
+	xs: rem('12px'),
+	sm: rem('14px'),
+	md: rem('16px'),
+	lg: rem('19px'),
+	xl: rem('28px'),
+	xxl: rem('38px'),
 };
 
 export type TFontSizes = keyof typeof fontSizes;
 
-export const rem = (px: number | string, base: number = 16): string => {
+export function rem(px: number | string, base: number = 16): string {
 	let numericPx: number = typeof px === 'string' ? parseFloat(px) : px;
 	return numericPx / base + 'rem';
-};
+}

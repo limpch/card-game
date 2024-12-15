@@ -1,5 +1,5 @@
 export type CardStatType = 'dot' | 'hit' | 'heal' | 'cooldown';
-export type CardType = 'dot' | 'hit' | 'heal';
+export type CardType = 'default' | 'dot' | 'hit' | 'heal';
 
 export interface ICardStat {
 	type: CardStatType;
@@ -9,5 +9,10 @@ export interface ICardStat {
 export interface ICardData {
 	points?: number;
 	type: CardType;
-	stats: ICardStat[];
+	stats?: ICardStat[];
+}
+
+export interface ICardsMock {
+	id: number;
+	data: ICardData;
 }

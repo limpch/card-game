@@ -13,3 +13,12 @@ body {
 	font-size: toRem(16px);
 	background-color: #0d1625;
 }
+
+button {
+	border: none;
+	background: none;
+	font-family: inherit;
+	font-weight: inherit;
+	font-size: inherit;
+	color: inherit;
+}

@@ -4,14 +4,14 @@ import { colors, TColors } from '@/config/styles.config';
 
 interface ShadowProps {
 	children?: ReactNode;
-	type: 'boxShadow' | 'filter';
+	type?: 'boxShadow' | 'filter';
 	c?: TColors;
 }
 
 export const Shadow: FC<ShadowProps> = ({
 	children,
 	c = 'primaryDark',
-	type,
+	type = 'filter',
 }) => {
 	const shadowStyle =
 		type === 'boxShadow'

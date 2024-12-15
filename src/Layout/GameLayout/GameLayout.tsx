@@ -1,9 +1,9 @@
-import classes from "./styles.module.scss"
+import classes from './styles.module.scss';
 
 interface GameLayoutProps {
-	children: React.ReactNode
+	children: React.ReactNode;
 }
 
 export const GameLayout = ({ children }: GameLayoutProps) => {
-	return <div className={classes.container}>{children}</div>
-}
+	return <div className={classes.game}>{children}</div>;
+};

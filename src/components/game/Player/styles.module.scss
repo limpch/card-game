@@ -1,0 +1,32 @@
+@use '@/utils/functions.scss' as *;
+
+.player {
+	position: fixed;
+	width: toRem(375px);
+	height: toRem(296px);
+
+	&__blue {
+		left: 0;
+		bottom: 0;
+	}
+
+	&__character {
+		position: fixed;
+	}
+
+	&__avatar {
+		position: fixed;
+		&_blue {
+			bottom: 0;
+			left: 0;
+		}
+	}
+
+	&__bg {
+		position: fixed;
+
+		&_blue {
+			bottom: 0;
+		}
+	}
+}

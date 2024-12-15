@@ -1,9 +1,9 @@
-import { CardsHolder } from "@/components/game/CardsHolder"
+import { MainMenuLayout } from '@/Layout/MainMenuLayout';
 
 export const HomePage = () => {
 	return (
 		<div>
-			<CardsHolder />
+			<MainMenuLayout />
 		</div>
-	)
-}
+	);
+};
