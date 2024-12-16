@@ -1,7 +1,9 @@
-@use '@/utils/functions.scss' as *;
+@use "@/utils/functions.scss" as *;
 
 .card {
 	position: relative;
+	transform: skewY(-8deg);
+
 	&__container {
 		position: relative;
 

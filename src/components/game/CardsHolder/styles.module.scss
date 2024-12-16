@@ -5,6 +5,7 @@
 	left: 0;
 	margin: 0 auto;
 	height: 100vh;
+	overflow: hidden;
 
 	&__container {
 		padding: 20px;
@@ -12,12 +13,18 @@
 		position: relative;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 
 		width: 100%;
 		height: 100%;
+
+		&.justify_start {
+			justify-content: flex-start;
+		}
 	}
 
 	&__item {
-		position: absolute;
+		transition: all 0.3s ease;
+		// position: absolute;
 	}
 }
