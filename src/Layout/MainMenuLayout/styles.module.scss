@@ -1,4 +1,4 @@
-@use '@/utils/functions.scss' as *;
+@use "@/utils/functions.scss" as *;
 
 .menu {
 	&__logobox {
@@ -25,15 +25,20 @@
 	}
 	&__deck {
 		position: fixed;
-		width: 139.31px;
-		height: 186.85px;
-		top: 491px;
-		left: 200px;
+		width: toRem(139.31px);
+		height: toRem(186.85px);
+		bottom: toRem(172px);
+		right: toRem(36px);
 		gap: 0px;
 		opacity: 0px;
 	}
 
 	&__card {
-		position: absolute;
+		position: fixed;
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) {
+				transform: translate(#{($i - 1) * 16px}, #{($i - 1) * 9px});
+			}
+		}
 	}
 }

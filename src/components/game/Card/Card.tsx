@@ -48,7 +48,9 @@ export const Card: FC<CardProps> = ({ data, children, index }) => {
 					</div>
 
 					{data.type === "default" ? (
-						<div className={classes.card__text}>{children}</div>
+						<div className={classes.card__textbox}>
+							<p className={classes.card__text}>{children}</p>
+						</div>
 					) : (
 						<div className={classes.card__icon}>
 							<Shadow c={cardColor} type={"filter"}>

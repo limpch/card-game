@@ -1,48 +1,50 @@
-import { FC } from 'react';
-import classes from './styles.module.scss';
-import { colors, TColors, rem } from '@/config/styles.config';
+import { FC } from "react"
+import classes from "./styles.module.scss"
+import { colors, TColors, rem } from "@/config/styles.config"
 
 interface ButtonProps {
-	children: React.ReactNode;
-	size?: TButtonSizes;
-	bg?: TColors;
-	c?: TColors;
+	children: React.ReactNode
+	size?: TButtonSizes
+	bg?: TColors
+	c?: TColors
+	p?: string
 }
 
 const buttonSizes = {
-	sm: rem('12px'),
-	md: rem('19px'),
-	lg: rem('38px'),
-};
+	sm: rem("12px"),
+	md: rem("19px"),
+	lg: rem("38px"),
+}
 
 const buttonPadding = {
-	sm: rem('12px'),
-	md: rem('12px'),
-	lg: rem('16px'),
-};
+	sm: rem("12px"),
+	md: rem("12px"),
+	lg: rem("16px"),
+}
 
-export type TButtonSizes = keyof typeof buttonSizes;
-export type TbuttonPadding = keyof typeof buttonSizes;
+export type TButtonSizes = keyof typeof buttonSizes
+export type TbuttonPadding = keyof typeof buttonSizes
 
 export const Button: FC<ButtonProps> = ({
 	children,
-	size = 'md',
-	bg = 'primaryLight',
-	c = 'primaryDark',
+	size = "md",
+	bg = "primaryLight",
+	c = "primaryDark",
+	p,
 }) => {
 	return (
 		<div className={classes.button}>
 			<button
-				type='button'
+				type="button"
 				style={{
 					backgroundColor: colors[bg],
 					color: colors[c],
 					fontSize: buttonSizes[size],
-					padding: buttonPadding[size],
+					padding: p ? p : buttonPadding[size],
 				}}
 			>
 				<p>{children}</p>
 			</button>
 		</div>
-	);
-};
+	)
+}
