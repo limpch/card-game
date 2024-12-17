@@ -3,6 +3,7 @@ import classes from "./styles.module.scss"
 import { Card } from "@/components/game/Card"
 import { ICardsMock } from "@/types/game"
 import { useElementSize } from "@mantine/hooks"
+import { AnimatePresence, motion } from "motion/react"
 
 interface CardsHolderProps {
 	cardsMock: ICardsMock[]
@@ -29,50 +30,49 @@ export const CardsHolder: FC<CardsHolderProps> = ({ cardsMock }) => {
 
 	const { ref, width } = useElementSize<HTMLDivElement>()
 
-	const offset = useMemo(() => {
-		if (!ref.current) return { x: 0, y: 8, container: 0 }
-		const container = ref.current as HTMLDivElement
+	const cardWidth = useMemo(() => {
+		const cardWidth = 70
 
-		const cardWidth = 90
-		const containerWidth = width
-		const baseOffset = 20
+		if (!ref.current) return cardWidth
 		const cardsCount = cards.length
 		const cardsWidth = cardsCount * cardWidth
 
-		console.log(90 - (containerWidth - cardWidth) / cardsCount)
-
-		if (cardsWidth >= containerWidth) {
-			const x = cardWidth - (containerWidth - cardWidth) / cardsCount
-
-			container.classList.add(classes.justify_start)
-
-			return { x, y: 8, container: 0 }
+		if (cardsWidth >= width) {
+			const x = width / cardsCount
+			return x
 		}
 
-		container.classList.remove(classes.justify_start)
-		return { x: baseOffset, y: 8, container: baseOffset }
+		return cardWidth
 	}, [cards.length, width])
+
+	const padding = useMemo(() => {
+		const padding = 90 - cardWidth
+		return padding < 40 ? 40 : padding
+	}, [cardWidth])
 
 	return (
 		<div
 			className={classes.holder}
 			// style={{ maxWidth: cardsMock.length * 70 + 40 }}
 		>
-			<div
-				className={classes.holder__container}
-				ref={ref}
-				style={{ transform: `translateX(${offset.container}px)` }}
-			>
-				{cards.map((cardMock, _ind) => (
-					<div
-						className={classes.holder__item}
-						style={{
-							transform: `translateY(${_ind * offset.y}px) translateX(${_ind * -offset.x}px) `,
-						}}
-					>
-						<Card key={_ind} data={cardMock.data} />
-					</div>
-				))}
+			<div className={classes.holder__container} ref={ref} style={{ padding: `20px ${padding}px` }}>
+				<AnimatePresence>
+					{cards.map((cardMock, _ind) => (
+						<motion.div
+							className={classes.holder__item}
+							style={{
+								transform: `translateY(${_ind * -8}px)`,
+								width: cardWidth,
+							}}
+							key={_ind}
+							initial={{ x: 300, width: 0, y: _ind * 8 }}
+							animate={{ x: 0, width: cardWidth }}
+							exit={{ width: 0 }}
+						>
+							<Card key={_ind} data={cardMock.data} index={_ind} />
+						</motion.div>
+					))}
+				</AnimatePresence>
 			</div>
 		</div>
 	)
