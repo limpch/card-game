@@ -7,10 +7,10 @@ import { ICardData } from "@/types/game"
 import { Shadow } from "@/components/ui/Shadow"
 import { CardStats } from "@/components/game/CardStats/CardStats"
 
-import DotIcon from "@/assets/icons/card/dot.svg?react"
-import HitIcon from "@/assets/icons/card/hit.svg?react"
-import HealIcon from "@/assets/icons/card/heal.svg?react"
-import CardDecor from "@/assets/icons/card/card-decor.svg?react"
+import DotIcon from "@/assets/icons/dot.svg?react"
+import HitIcon from "@/assets/icons/hit.svg?react"
+import HealIcon from "@/assets/icons/heal.svg?react"
+import CardDecor from "@/assets/icons/card-decor.svg?react"
 
 const cardColors = {
 	default: "primaryBlue",
