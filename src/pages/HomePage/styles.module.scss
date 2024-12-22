@@ -1,5 +1,16 @@
+@use "@/utils/functions.scss" as *;
+
 .home {
 	height: 100vh;
+
+	&__navigation {
+		position: absolute;
+		z-index: 10;
+		width: fit-content;
+
+		top: toRem(32px);
+		left: toRem(38px);
+	}
 }
 
 // .home {

@@ -6,5 +6,9 @@ interface TitleProps {
 }
 
 export const Title = ({ children }: TitleProps) => {
-	return <div className={classes.title}>{children}</div>
+	return (
+		<div className={classes.title}>
+			<h1 className={classes.title__text}>{children}</h1>
+		</div>
+	)
 }

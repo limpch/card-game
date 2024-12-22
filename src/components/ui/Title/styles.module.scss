@@ -1,11 +1,20 @@
 .title {
-	font-size: 36px;
-	color: #fff;
-	font-weight: 700;
-
+	background-color: #0e82ee;
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	justify-content: center;
+	font-weight: 700;
+	line-height: 1;
+	width: fit-content;
 
-	cursor: pointer;
+	transform: skewX(-41deg) rotate(-8deg);
+
+	h1 {
+		font-size: 38px;
+		color: #fff;
+		font-weight: 700;
+		transform: skew(31deg) rotate(0deg) scale(0.9, 1.1);
+		padding: 18px 24px;
+		filter: drop-shadow(-4px 4px #0d1625);
+	}
 }

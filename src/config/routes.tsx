@@ -3,6 +3,7 @@ import { lazy } from "react"
 
 const HomePage = lazy(() => import("@/pages/HomePage"))
 const StartMenuLayout = lazy(() => import("@/Layout/StartMenuLayout"))
+const DeckStoreLayout = lazy(() => import("@/Layout/DeckStoreLayout"))
 const MainMenuLayout = lazy(() => import("@/Layout/MainMenuLayout"))
 const BattlePage = lazy(() => import("@/pages/BattlePage"))
 
@@ -15,11 +16,6 @@ const BattlePage = lazy(() => import("@/pages/BattlePage"))
 // 	component: <CharacterMenu />,
 // 	slug: "character-menu",
 // },
-// {
-// 	path: "deck",
-// 	component: <DeckPage />,
-// 	slug: "deck-page",
-// },
 
 class RouterConfig {
 	routes: IRoute[] = [
@@ -29,7 +25,7 @@ class RouterConfig {
 			slug: "home",
 			children: [
 				{
-					path: "", // Основной маршрут "/" для MainMenuLayout
+					path: "",
 					component: <MainMenuLayout />,
 					slug: "main-menu",
 				},
@@ -37,6 +33,11 @@ class RouterConfig {
 					path: "play",
 					component: <StartMenuLayout />,
 					slug: "play-menu",
+				},
+				{
+					path: "deck",
+					component: <DeckStoreLayout />,
+					slug: "deck-menu",
 				},
 			],
 		},

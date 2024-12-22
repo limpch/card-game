@@ -10,6 +10,7 @@ interface ButtonProps {
 	p?: string
 	w?: string
 	maw?: string
+	onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const buttonSizes = {
@@ -35,6 +36,7 @@ export const Button: FC<ButtonProps> = ({
 	p,
 	w,
 	maw,
+	onClick,
 }) => {
 	return (
 		<div
@@ -46,6 +48,7 @@ export const Button: FC<ButtonProps> = ({
 		>
 			<button
 				type="button"
+				onClick={onClick}
 				style={{
 					backgroundColor: colors[bg],
 					color: colors[c],
