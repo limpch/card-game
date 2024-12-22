@@ -1,2 +1,11 @@
-.container {
+.battle {
+	height: 100%;
+
+	&__deck {
+		display: flex;
+		position: fixed;
+
+		bottom: 24%;
+		right: 16px;
+	}
 }

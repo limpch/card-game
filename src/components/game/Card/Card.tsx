@@ -7,10 +7,10 @@ import { ICardData } from "@/types/game"
 import { Shadow } from "@/components/ui/Shadow"
 import { CardStats } from "@/components/game/CardStats/CardStats"
 
-import DotIcon from "@/assets/icons/card/dot.svg?react"
-import HitIcon from "@/assets/icons/card/hit.svg?react"
-import HealIcon from "@/assets/icons/card/heal.svg?react"
-import CardDecor from "@/assets/icons/card/card-decor.svg?react"
+import DotIcon from "@/assets/icons/dot.svg?react"
+import HitIcon from "@/assets/icons/hit.svg?react"
+import HealIcon from "@/assets/icons/heal.svg?react"
+import CardDecor from "@/assets/icons/card-decor.svg?react"
 
 const cardColors = {
 	default: "primaryBlue",
@@ -18,6 +18,7 @@ const cardColors = {
 	dot: "primaryGreen",
 	hit: "primaryBlue",
 	darkBg: "primaryDark",
+	disable: "shadowBlue",
 } as const
 
 interface CardProps {
@@ -47,8 +48,10 @@ export const Card: FC<CardProps> = ({ data, children, index }) => {
 						<CardDecor width={"100%"} height={"100%"} />
 					</div>
 
-					{data.type === "default" ? (
-						<div className={classes.card__text}>{children}</div>
+					{data.type === "default" || data.type === "disable" ? (
+						<div className={classes.card__textbox}>
+							<p className={classes.card__text}>{children}</p>
+						</div>
 					) : (
 						<div className={classes.card__icon}>
 							<Shadow c={cardColor} type={"filter"}>

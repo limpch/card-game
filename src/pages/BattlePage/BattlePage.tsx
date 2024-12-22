@@ -1,9 +1,10 @@
-import { BattleLayout } from '@/Layout/BattleLayout';
+import classes from "./styles.module.scss"
+import { BattleLayout } from "@/Layout/BattleLayout"
 
 export const BattlePage = () => {
 	return (
-		<div>
+		<div className={classes.battle}>
 			<BattleLayout />
 		</div>
-	);
-};
+	)
+}

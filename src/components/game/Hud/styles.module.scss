@@ -1,0 +1,58 @@
+@use "@/utils/functions.scss" as *;
+
+.hud {
+	width: toRem(249px);
+	padding: toRem(14px);
+	padding-bottom: 0;
+	position: absolute;
+
+	&_blue {
+		right: 0;
+		bottom: 0;
+	}
+
+	&_red {
+		left: 0;
+		top: 0;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(12px);
+	}
+
+	&__info {
+		display: flex;
+		flex-wrap: wrap;
+		gap: toRem(6px);
+
+		&_blue {
+			justify-content: flex-end;
+		}
+
+		&_red {
+			justify-content: flex-start;
+		}
+	}
+
+	&__group {
+		display: flex;
+		flex-direction: column;
+		height: 42px;
+
+		&_blue {
+			align-items: flex-end;
+		}
+
+		&_red {
+			align-items: flex-start;
+		}
+	}
+
+	&__shields {
+		&:last-child {
+			transform: translateY(toRem(-7px));
+		}
+	}
+}
