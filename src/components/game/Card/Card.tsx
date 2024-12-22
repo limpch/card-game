@@ -18,6 +18,7 @@ const cardColors = {
 	dot: "primaryGreen",
 	hit: "primaryBlue",
 	darkBg: "primaryDark",
+	disable: "shadowBlue",
 } as const
 
 interface CardProps {
@@ -47,7 +48,7 @@ export const Card: FC<CardProps> = ({ data, children, index }) => {
 						<CardDecor width={"100%"} height={"100%"} />
 					</div>
 
-					{data.type === "default" ? (
+					{data.type === "default" || data.type === "disable" ? (
 						<div className={classes.card__textbox}>
 							<p className={classes.card__text}>{children}</p>
 						</div>

@@ -1,9 +1,10 @@
-import { MainMenuLayout } from '@/Layout/MainMenuLayout';
+import classes from "./styles.module.scss"
+import { Outlet } from "react-router-dom"
 
 export const HomePage = () => {
 	return (
-		<div>
-			<MainMenuLayout />
+		<div className={classes.home}>
+			<Outlet />
 		</div>
-	);
-};
+	)
+}

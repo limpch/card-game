@@ -3,6 +3,7 @@
 .hud {
 	width: toRem(249px);
 	padding: toRem(14px);
+	padding-bottom: 0;
 	position: absolute;
 
 	&_blue {

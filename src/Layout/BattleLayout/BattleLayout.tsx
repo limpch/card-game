@@ -3,6 +3,7 @@ import classes from "./styles.module.scss"
 import { ICardsMock } from "@/types/game"
 import { CardsHolder } from "@/components/game/CardsHolder"
 import { Player } from "@/components/game/Player"
+import { Card } from "@/components/game/Card"
 
 interface BattleLayoutProps {}
 
@@ -99,10 +100,15 @@ const cardsMock: ICardsMock[] = [
 
 export const BattleLayout: FC<BattleLayoutProps> = ({}) => {
 	return (
-		<div className={classes.container}>
+		<div className={classes.battle}>
 			<Player battle={true} type="red" />
 			<Player battle={true} type="blue" />
-			{/* <CardsHolder cardsMock={cardsMock} /> */}
+			<div className={classes.battle__deck}>
+				<Card data={{ type: "disable" }} index={0}>
+					16/20
+				</Card>
+			</div>
+			<CardsHolder cardsMock={cardsMock} />
 		</div>
 	)
 }

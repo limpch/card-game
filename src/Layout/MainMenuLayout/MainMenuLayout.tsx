@@ -19,27 +19,12 @@ export const MainMenuLayout: FC<MainMenuLayoutProps> = ({}) => {
 					<img width={346} height={200} src={gameLogo} alt="Mages deck logo" />
 				</div>
 				<Player />
-				<div className={classes.menu__start}>
-					<Link to="/battle">
-						<Button size="lg" p={`${rem("16px")} ${rem("54px")}`}>
-							Играть
-						</Button>
-					</Link>
-				</div>
 				<div className={classes.menu__deck}>
 					<div className={classes.menu__card}>
-						<Card data={{ type: "default" }} index={0}>
-							Моя
-							<br />
-							колода
-						</Card>
+						<Card data={{ type: "disable" }} index={0}></Card>
 					</div>
 					<div className={classes.menu__card}>
-						<Card data={{ type: "default" }} index={1}>
-							Моя
-							<br />
-							колода
-						</Card>
+						<Card data={{ type: "disable" }} index={1}></Card>
 					</div>
 					<div className={classes.menu__card}>
 						<Card data={{ type: "default" }} index={2}>
@@ -51,6 +36,13 @@ export const MainMenuLayout: FC<MainMenuLayoutProps> = ({}) => {
 				</div>
 				<div className={classes.menu__character}>
 					<Button size="md">Персонаж</Button>
+				</div>
+				<div className={classes.menu__start}>
+					<Link to="/play">
+						<Button size="lg" p={`${rem("16px")} ${rem("54px")}`}>
+							Играть
+						</Button>
+					</Link>
 				</div>
 			</div>
 		</GameLayout>

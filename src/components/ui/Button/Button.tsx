@@ -8,6 +8,8 @@ interface ButtonProps {
 	bg?: TColors
 	c?: TColors
 	p?: string
+	w?: string
+	maw?: string
 }
 
 const buttonSizes = {
@@ -31,9 +33,17 @@ export const Button: FC<ButtonProps> = ({
 	bg = "primaryLight",
 	c = "primaryDark",
 	p,
+	w,
+	maw,
 }) => {
 	return (
-		<div className={classes.button}>
+		<div
+			className={classes.button}
+			style={{
+				width: w ? w : "fit-content",
+				maxWidth: maw ? maw : "none",
+			}}
+		>
 			<button
 				type="button"
 				style={{
@@ -41,6 +51,7 @@ export const Button: FC<ButtonProps> = ({
 					color: colors[c],
 					fontSize: buttonSizes[size],
 					padding: p ? p : buttonPadding[size],
+					width: w ? w : "fit-content",
 				}}
 			>
 				<p>{children}</p>
