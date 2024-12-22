@@ -40,7 +40,7 @@ export const MainMenuLayout: FC<MainMenuLayoutProps> = ({}) => {
 					<Button size="md">Персонаж</Button>
 				</div>
 				<div className={classes.menu__start}>
-					<Link to="/play">
+					<Link to="/start">
 						<Button size="lg" p={`${rem("16px")} ${rem("54px")}`}>
 							Играть
 						</Button>
