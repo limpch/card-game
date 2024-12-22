@@ -100,9 +100,9 @@ const cardsMock: ICardsMock[] = [
 export const BattleLayout: FC<BattleLayoutProps> = ({}) => {
 	return (
 		<div className={classes.container}>
-			<Player type="red" />
-			<Player type="blue" />
-			<CardsHolder cardsMock={cardsMock} />
+			<Player battle={true} type="red" />
+			<Player battle={true} type="blue" />
+			{/* <CardsHolder cardsMock={cardsMock} /> */}
 		</div>
 	)
 }

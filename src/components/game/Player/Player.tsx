@@ -1,6 +1,7 @@
 import { FC, useState, useEffect } from "react"
 import classes from "./styles.module.scss"
-import { rem } from "@/config/styles.config"
+
+import { Hud } from "@/components/game/Hud"
 
 interface PlayerProps {
 	type?: "blue" | "red"
@@ -51,7 +52,7 @@ export const Player: FC<PlayerProps> = ({ type = "blue", battle = false }) => {
 					className={`${classes.player__avatar} ${classes[`player__avatar_${type}`]}`}
 				/>
 			</div>
-			{battle && "ui"}
+			{battle && <Hud type={type} />}
 		</div>
 	)
 }
