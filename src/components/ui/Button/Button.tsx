@@ -10,6 +10,7 @@ interface ButtonProps {
 	p?: string
 	w?: string
 	maw?: string
+	onClick?: () => void
 }
 
 const buttonSizes = {
@@ -35,6 +36,7 @@ export const Button: FC<ButtonProps> = ({
 	p,
 	w,
 	maw,
+	onClick,
 }) => {
 	return (
 		<div
@@ -53,6 +55,7 @@ export const Button: FC<ButtonProps> = ({
 					padding: p ? p : buttonPadding[size],
 					width: w ? w : "fit-content",
 				}}
+				onClick={onClick}
 			>
 				<p>{children}</p>
 			</button>

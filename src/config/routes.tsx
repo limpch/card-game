@@ -5,8 +5,8 @@ const HomePage = lazy(() => import("@/pages/HomePage"))
 const StartMenuLayout = lazy(() => import("@/Layout/StartMenuLayout"))
 const MainMenuLayout = lazy(() => import("@/Layout/MainMenuLayout"))
 const BattlePage = lazy(() => import("@/pages/BattlePage"))
+const TestPage = lazy(() => import("@/pages/TestPage"))
 
-// const PlayMenu = lazy(() => import("@/pages/PlayMenu"))
 // const CharacterMenu = lazy(() => import("@/pages/CharacterMenu"))
 // const DeckPage = lazy(() => import("@/pages/DeckPage"))
 
@@ -44,6 +44,11 @@ class RouterConfig {
 			path: "/battle",
 			component: <BattlePage />,
 			slug: "battle",
+		},
+		{
+			path: "/test",
+			component: <TestPage />,
+			slug: "test",
 		},
 	]
 

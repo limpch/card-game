@@ -3,9 +3,9 @@ import { ILoginResponse } from "@/types/auth"
 import { ISuccessResponse } from "@/types/response"
 
 class AuthService {
-	async login(telegramLogin: string) {
+	async login(telegramUserData: string) {
 		const response = await $api.post<ISuccessResponse<ILoginResponse>>("/auth/login", {
-			telegramLogin,
+			telegramUserData,
 		})
 
 		localStorage.setItem("token", response.data.data.token)
