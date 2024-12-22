@@ -39,7 +39,7 @@
 	&__group {
 		display: flex;
 		flex-direction: column;
-		height: 42px;
+		height: toRem(42px);
 
 		&_blue {
 			align-items: flex-end;

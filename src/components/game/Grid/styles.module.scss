@@ -1,0 +1,8 @@
+@use "@/utils/functions.scss" as *;
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	row-gap: toRem(34px);
+	column-gap: toRem(32px);
+}

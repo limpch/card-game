@@ -1,4 +1,4 @@
-@use '@/utils/functions.scss' as *;
+@use "@/utils/functions.scss" as *;
 
 .stats {
 	position: absolute;
@@ -22,9 +22,9 @@
 
 		p {
 			transform: rotate(26deg);
-			font-size: 19px;
+			font-size: toRem(19px);
 			font-weight: 700;
-			line-height: 22.52px;
+			line-height: toRem(22.52px);
 			position: relative;
 			margin: 0;
 		}
@@ -32,11 +32,11 @@
 		&::before {
 			position: absolute;
 			top: 0;
-			left: 12px;
-			content: '';
+			left: toRem(12px);
+			content: "";
 			background-color: #fff;
 			display: block;
-			width: 32px;
+			width: toRem(32px);
 			height: 100%;
 			transform: skewX(-41deg);
 		}

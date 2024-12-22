@@ -1,0 +1,26 @@
+@use "@/utils/functions.scss" as *;
+
+.storage {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	margin: toRem(38px) toRem(32px);
+
+	&__container {
+		max-width: toRem(375px);
+	}
+
+	&__card {
+		position: relative;
+	}
+
+	&__button {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+
+		transform: translate(10px, 10px);
+	}
+}

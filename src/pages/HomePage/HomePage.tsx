@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/Button"
 import classes from "./styles.module.scss"
-import { Outlet, useNavigate } from "react-router-dom"
+import { Outlet, useNavigate, useNavigationType } from "react-router-dom"
 
 export const HomePage = () => {
 	const navigate = useNavigate()

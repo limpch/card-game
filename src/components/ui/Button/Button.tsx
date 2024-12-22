@@ -10,6 +10,7 @@ interface ButtonProps {
 	p?: string
 	w?: string
 	maw?: string
+	disable?: boolean
 	onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
@@ -36,6 +37,7 @@ export const Button: FC<ButtonProps> = ({
 	p,
 	w,
 	maw,
+	disable = false,
 	onClick,
 }) => {
 	return (
@@ -56,6 +58,7 @@ export const Button: FC<ButtonProps> = ({
 					padding: p ? p : buttonPadding[size],
 					width: w ? w : "fit-content",
 				}}
+				disabled={disable}
 			>
 				<p>{children}</p>
 			</button>

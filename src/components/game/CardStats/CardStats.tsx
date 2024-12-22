@@ -29,8 +29,8 @@ export const CardStats: FC<CardStatsProps> = ({ data }) => {
 
 			{data.stats && (
 				<div className={classes.stats__container}>
-					{data.stats.map(stat => (
-						<div className={classes.stats__item}>
+					{data.stats.map((stat, _ind) => (
+						<div key={_ind} className={classes.stats__item}>
 							<p className={classes.stats__value}>{stat.value}</p>
 							<div className={classes.stats__icon}>
 								{stat.type === "dot" ? (

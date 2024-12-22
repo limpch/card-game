@@ -1,3 +1,5 @@
+@use "@/utils/functions" as *;
+
 .holder {
 	position: absolute;
 	width: 100%;
@@ -8,7 +10,7 @@
 	overflow: hidden;
 
 	&__container {
-		padding: 20px;
+		padding: toRem(20px);
 		margin-top: 30vh;
 
 		position: relative;

@@ -1,0 +1,63 @@
+@use "@/utils/functions.scss" as *;
+
+.storage {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+	padding-bottom: toRem(107px);
+
+	&__head {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		height: toRem(213px);
+		gap: toRem(28px);
+		margin-bottom: toRem(34px);
+	}
+
+	&__title {
+		margin-top: toRem(62px);
+	}
+
+	&__tabs {
+		display: flex;
+		gap: toRem(8px);
+	}
+
+	&__confirm {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: fit-content;
+		padding: toRem(32px) toRem(39px);
+
+		display: flex;
+		justify-content: center;
+		gap: toRem(18px);
+	}
+
+	&__counter {
+		background-color: #0e82ee;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-weight: 700;
+		line-height: 1;
+		width: fit-content;
+
+		transform: skewX(-41deg) rotate(-8deg);
+
+		&.error {
+			background-color: #930036;
+		}
+
+		p {
+			font-size: toRem(19px);
+			color: #fff;
+			font-weight: 700;
+			transform: skew(31deg) rotate(0deg) scale(0.9, 1.1);
+			padding: toRem(12px) toRem(24px);
+		}
+	}
+}

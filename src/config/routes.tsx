@@ -2,8 +2,10 @@ import { IRoute } from "@/types/routes"
 import { lazy } from "react"
 
 const HomePage = lazy(() => import("@/pages/HomePage"))
+const StoragePage = lazy(() => import("@/pages/StoragePage"))
 const StartMenuLayout = lazy(() => import("@/Layout/StartMenuLayout"))
-const DeckStoreLayout = lazy(() => import("@/Layout/DeckStoreLayout"))
+const DeckLayout = lazy(() => import("@/Layout/DeckLayout"))
+const StorageLayout = lazy(() => import("@/Layout/StorageLayout"))
 const MainMenuLayout = lazy(() => import("@/Layout/MainMenuLayout"))
 const BattlePage = lazy(() => import("@/pages/BattlePage"))
 
@@ -34,10 +36,22 @@ class RouterConfig {
 					component: <StartMenuLayout />,
 					slug: "play-menu",
 				},
+			],
+		},
+		{
+			path: "/storage",
+			component: <StoragePage />,
+			slug: "storage",
+			children: [
 				{
-					path: "deck",
-					component: <DeckStoreLayout />,
-					slug: "deck-menu",
+					path: "",
+					component: <DeckLayout />,
+					slug: "storage-deck",
+				},
+				{
+					path: "/storage/store",
+					component: <StorageLayout />,
+					slug: "store",
 				},
 			],
 		},

@@ -19,7 +19,7 @@ export const MainMenuLayout: FC<MainMenuLayoutProps> = ({}) => {
 					<img width={346} height={200} src={gameLogo} alt="Mages deck logo" />
 				</div>
 				<Player />
-				<Link to="/play">
+				<Link to="/storage">
 					<div className={classes.menu__deck}>
 						<div className={classes.menu__card}>
 							<Card data={{ type: "disable" }} index={0}></Card>
