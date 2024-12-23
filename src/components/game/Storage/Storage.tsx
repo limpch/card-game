@@ -140,9 +140,9 @@ const cardsMock: ICardsMock[] = [
 	},
 ]
 
-interface StorageLayoutProps {}
+interface StorageProps {}
 
-export const StorageLayout: FC<StorageLayoutProps> = ({}) => {
+export const Storage: FC<StorageProps> = ({}) => {
 	const [cards, setCards] = useState<ICardsMock[]>(cardsMock)
 
 	return (

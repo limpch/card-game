@@ -37,7 +37,9 @@ export const MainMenuLayout: FC<MainMenuLayoutProps> = ({}) => {
 					</div>
 				</Link>
 				<div className={classes.menu__character}>
-					<Button size="md">Персонаж</Button>
+					<Link to="/character">
+						<Button size="md">Персонаж</Button>
+					</Link>
 				</div>
 				<div className={classes.menu__start}>
 					<Link to="/start">

@@ -4,8 +4,8 @@ import { lazy } from "react"
 const HomePage = lazy(() => import("@/pages/HomePage"))
 const StoragePage = lazy(() => import("@/pages/StoragePage"))
 const StartMenuLayout = lazy(() => import("@/Layout/StartMenuLayout"))
-const DeckLayout = lazy(() => import("@/Layout/DeckLayout"))
-const StorageLayout = lazy(() => import("@/Layout/StorageLayout"))
+const Deck = lazy(() => import("@/components/game/Deck"))
+const Storage = lazy(() => import("@/components/game/Storage"))
 const MainMenuLayout = lazy(() => import("@/Layout/MainMenuLayout"))
 const CharactersPage = lazy(() => import("@/pages/CharactersPage"))
 const BattlePage = lazy(() => import("@/pages/BattlePage"))
@@ -47,12 +47,12 @@ class RouterConfig {
 			children: [
 				{
 					path: "",
-					component: <DeckLayout />,
+					component: <Deck />,
 					slug: "storage-deck",
 				},
 				{
 					path: "/storage/store",
-					component: <StorageLayout />,
+					component: <Storage />,
 					slug: "store",
 				},
 			],

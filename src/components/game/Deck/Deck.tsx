@@ -96,9 +96,9 @@ const cardsMock: ICardsMock[] = [
 	},
 ]
 
-interface DeckLayoutProps {}
+interface DeckProps {}
 
-export const DeckLayout: FC<DeckLayoutProps> = ({}) => {
+export const Deck: FC<DeckProps> = ({}) => {
 	const [cards, setCards] = useState<ICardsMock[]>(cardsMock)
 	return (
 		<div className={classes.deck}>
