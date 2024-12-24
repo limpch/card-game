@@ -5,6 +5,7 @@ import { StoragePageLayout } from "@/Layout/StoragePageLayout"
 export const StoragePage = () => {
 	const location = useLocation()
 	const [cards, setCards] = useState(8)
+
 	return (
 		<StoragePageLayout>
 			<Outlet />

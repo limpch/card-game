@@ -7,19 +7,24 @@
 	left: 0;
 	margin: 0 auto;
 	height: 100vh;
-	overflow: hidden;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-bottom: toRem(135px);
 
 	&__container {
 		padding: toRem(20px);
-		margin-top: 30vh;
+		// margin-top: 30vh;
 
 		position: relative;
 		display: flex;
 		justify-content: center;
+		overflow: hidden;
+		height: 100%;
+		align-items: center;
 
 		width: 100%;
-		height: 100%;
-		overflow: hidden;
 
 		&.justify_start {
 			justify-content: flex-start;
