@@ -13,7 +13,7 @@ export const CharacterInfo: FC<CharacterInfoProps> = ({}) => {
 				30/30
 			</StatBar>
 			<ActionPointsBar points={6} />
-			<Text fz={19} c={"primaryLight"}>
+			<Text fz={19} lh={1.3} c={"primaryLight"}>
 				Базовый по всем показателям персонаж
 			</Text>
 		</div>
