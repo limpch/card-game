@@ -1,5 +1,4 @@
 import classes from "./styles.module.scss"
-import { Link, useLocation } from "react-router-dom"
 import { Navigation } from "@/components/game/Navigation"
 import { Title } from "@/components/ui/Title"
 import { Button } from "@/components/ui/Button"
@@ -9,7 +8,6 @@ import Deck from "@/components/game/Deck"
 import Storage from "@/components/game/Storage"
 
 export const StoragePage = () => {
-	const location = useLocation()
 	const [cards, setCards] = useState(8)
 	const [page, setPage] = useState(0)
 
