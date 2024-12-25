@@ -4,16 +4,17 @@ import { AnimatePresence, motion } from "framer-motion"
 import ChevronNext from "@/assets/icons/chevron-next.svg?react"
 import ChevronPrev from "@/assets/icons/chevron-prev.svg?react"
 
-import charBlue from "@/assets/players/temp/character-blue-side.png"
-import charRed from "@/assets/players/temp/character-red-side.png"
 import char1 from "@/assets/players/temp/char_1.png"
+import char2 from "@/assets/players/temp/char_2.png"
+import char3 from "@/assets/players/temp/char_3.png"
+import { CharacterInfo } from "@/components/CharacterInfo"
 
 interface SliderProps {}
 
 const charData = [
-	{ id: 0, src: charBlue },
-	{ id: 1, src: charRed },
-	{ id: 2, src: char1 },
+	{ id: 0, src: char1 },
+	{ id: 1, src: char2 },
+	{ id: 2, src: char3 },
 ]
 
 export const Slider: FC<SliderProps> = () => {
@@ -31,15 +32,20 @@ export const Slider: FC<SliderProps> = () => {
 		<div className={classes.slider}>
 			<div className={classes.slider__frame}>
 				<AnimatePresence>
-					<motion.img
+					<motion.div
 						key={charData[currentIndex].id}
-						src={charData[currentIndex].src}
-						initial={{ x: 300, opacity: 0 }}
-						animate={{ x: 0, opacity: 1 }}
-						exit={{ x: -300, opacity: 0 }}
-						className={classes.slider__image}
-					/>
-					<div>stats</div>
+						initial={{ translateX: "100%", opacity: 0 }}
+						animate={{ translateX: 0, opacity: 1 }}
+						exit={{ translateX: "-100%", opacity: 0 }}
+						className={classes.slider__slide}
+					>
+						<div className={classes.slider__imgbox}>
+							<img className={classes.slider__image} src={charData[currentIndex].src} alt="" />
+						</div>
+						<div>
+							<CharacterInfo />
+						</div>
+					</motion.div>
 				</AnimatePresence>
 			</div>
 			<div className={classes.slider__navigation}>

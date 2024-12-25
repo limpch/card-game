@@ -7,11 +7,40 @@
 		display: flex;
 		justify-content: space-between;
 		margin: auto;
-		top: 50%;
+		top: 40%;	
 		left: 0;
+	}
+
+	&__frame {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		width: 100%;
+		height: 100%;
+	}
+
+	&__slide {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		width: 380px;
+		height: 468.5px;
+	}
+
+	&__imgbox {
+		position: relative;
+		width: 380px;
+		height: 468.5px;
 	}
 
 	&__image {
 		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
 	}
 }

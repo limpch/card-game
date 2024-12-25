@@ -22,6 +22,7 @@
 		position: relative;
 		display: flex;
 		align-items: center;
+		height: 100%;
 		gap: toRem(7px);
 		transform: skewX(18deg);
 	}
@@ -36,7 +37,7 @@
 		&__value {
 			font-size: toRem(19px);
 			font-weight: 700;
-			line-height: 1;
+			line-height: 1.2;
 		}
 
 		&__bar {
