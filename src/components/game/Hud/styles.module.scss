@@ -6,12 +6,12 @@
 	padding-bottom: 0;
 	position: absolute;
 
-	&_blue {
+	&_player {
 		right: 0;
 		bottom: 0;
 	}
 
-	&_red {
+	&_enemy {
 		left: 0;
 		top: 0;
 	}
@@ -27,11 +27,11 @@
 		flex-wrap: wrap;
 		gap: toRem(6px);
 
-		&_blue {
+		&_player {
 			justify-content: flex-end;
 		}
 
-		&_red {
+		&_enemy {
 			justify-content: flex-start;
 		}
 	}
@@ -41,11 +41,11 @@
 		flex-direction: column;
 		height: toRem(42px);
 
-		&_blue {
+		&_player {
 			align-items: flex-end;
 		}
 
-		&_red {
+		&_enemy {
 			align-items: flex-start;
 		}
 	}

@@ -3,6 +3,7 @@ import { ICardsMock } from "@/types/game"
 import { CardsHolder } from "@/components/game/CardsHolder"
 import { Player } from "@/components/game/Player"
 import { Card } from "@/components/game/Card"
+import { Enemy } from "@/components/game/Enemy"
 
 const cardsMock: ICardsMock[] = [
 	{
@@ -98,8 +99,8 @@ const cardsMock: ICardsMock[] = [
 export const BattlePage = () => {
 	return (
 		<div className={classes.battle}>
-			<Player battle={true} type="red" />
-			<Player battle={true} type="blue" />
+			<Enemy />
+			<Player battle={true} />
 			<div className={classes.battle__deck}>
 				<Card data={{ type: "disable" }} index={0}>
 					16/20

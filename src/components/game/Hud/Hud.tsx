@@ -5,10 +5,10 @@ import { Text } from "@/components/ui/Text"
 import { ActionPointsBar } from "@/components/ui/ActionPointsBar"
 
 interface HudProps {
-	type?: "blue" | "red"
+	type?: "player" | "enemy"
 }
 
-export const Hud: FC<HudProps> = ({ type = "blue" }) => {
+export const Hud: FC<HudProps> = ({ type = "player" }) => {
 	return (
 		<div className={`${classes.hud} ${classes[`hud_${type}`]}`}>
 			<div className={classes.hud__container}>

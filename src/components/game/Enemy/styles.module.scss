@@ -1,11 +1,11 @@
 @use "@/utils/functions.scss" as *;
 
-.player {
+.enemy {
 	position: fixed;
 	width: 100%;
 	height: toRem(296px);
-	left: 0;
-	bottom: 0;
+	right: 0;
+	top: 0;
 
 	&__character {
 		display: block;
@@ -18,13 +18,12 @@
 	&__avatar {
 		position: relative;
 		height: 100%;
-		bottom: 0;
-		left: 0;
+		margin-left: auto;
 	}
 
 	&__bg {
 		position: absolute;
 		bottom: 0;
-		left: 0;
+		right: 0;
 	}
 }
