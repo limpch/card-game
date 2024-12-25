@@ -10,7 +10,7 @@ const cardsMock: ICardsMock[] = [
 		id: 0,
 		data: {
 			type: "hit",
-			points: 10,
+			points: 2,
 			stats: [
 				{ type: "dot", value: 3 },
 				{ type: "heal", value: 2 },

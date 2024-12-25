@@ -13,12 +13,10 @@ export const Navigation: FC<NavigationProps> = ({}) => {
 	}
 
 	return (
-		location.pathname !== "/" && (
-			<div className={classes.navigation}>
-				<Button size="md" onClick={handleGoBack}>
-					Назад
-				</Button>
-			</div>
-		)
+		<div className={classes.navigation}>
+			<Button size="md" onClick={handleGoBack}>
+				Назад
+			</Button>
+		</div>
 	)
 }

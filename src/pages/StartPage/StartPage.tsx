@@ -5,10 +5,11 @@ import { Link, useNavigate } from "react-router-dom"
 import { rem } from "@/config/styles.config"
 import { Title } from "@/components/ui/Title"
 import { roomService } from "@/services/room.service"
+import { Navigation } from "@/components/game/Navigation"
 
-interface StartMenuLayoutProps {}
+interface StartPageProps {}
 
-export const StartMenuLayout: FC<StartMenuLayoutProps> = ({}) => {
+export const StartPage: FC<StartPageProps> = ({}) => {
 	const navigate = useNavigate()
 
 	const createRoom = () => {
@@ -18,6 +19,7 @@ export const StartMenuLayout: FC<StartMenuLayoutProps> = ({}) => {
 
 	return (
 		<div className={classes.start}>
+			<Navigation />
 			<div className={classes.start__title}>
 				<Title>Играть</Title>
 			</div>

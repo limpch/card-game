@@ -2,11 +2,10 @@ import { IRoute } from "@/types/routes"
 import { lazy } from "react"
 
 const HomePage = lazy(() => import("@/pages/HomePage"))
+const StartPage = lazy(() => import("@/pages/StartPage"))
 const StoragePage = lazy(() => import("@/pages/StoragePage"))
-const StartMenuLayout = lazy(() => import("@/Layout/StartMenuLayout"))
 const Deck = lazy(() => import("@/components/game/Deck"))
 const Storage = lazy(() => import("@/components/game/Storage"))
-const MainMenuLayout = lazy(() => import("@/Layout/MainMenuLayout"))
 const CharactersPage = lazy(() => import("@/pages/CharactersPage"))
 const BattlePage = lazy(() => import("@/pages/BattlePage"))
 const TestPage = lazy(() => import("@/pages/TestPage"))
@@ -27,35 +26,16 @@ class RouterConfig {
 			path: "/",
 			component: <HomePage />,
 			slug: "home",
-			children: [
-				{
-					path: "",
-					component: <MainMenuLayout />,
-					slug: "main-menu",
-				},
-				{
-					path: "start",
-					component: <StartMenuLayout />,
-					slug: "play-menu",
-				},
-			],
+		},
+		{
+			path: "/start",
+			component: <StartPage />,
+			slug: "play-menu",
 		},
 		{
 			path: "/storage",
 			component: <StoragePage />,
 			slug: "storage",
-			children: [
-				{
-					path: "",
-					component: <Deck />,
-					slug: "storage-deck",
-				},
-				{
-					path: "/storage/store",
-					component: <Storage />,
-					slug: "store",
-				},
-			],
 		},
 		{
 			path: "/character",

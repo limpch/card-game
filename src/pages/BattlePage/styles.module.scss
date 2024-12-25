@@ -1,3 +1,11 @@
 .battle {
 	height: 100vh;
+
+	&__deck {
+		display: flex;
+		position: fixed;
+
+		bottom: 24%;
+		right: 16px;
+	}
 }
