@@ -5,6 +5,7 @@ const HomePage = lazy(() => import("@/pages/HomePage"))
 const StartPage = lazy(() => import("@/pages/StartPage"))
 const StoragePage = lazy(() => import("@/pages/StoragePage"))
 const CharactersPage = lazy(() => import("@/pages/CharactersPage"))
+const CreateGamePage = lazy(() => import("@/pages/CreateGamePage"))
 const BattlePage = lazy(() => import("@/pages/BattlePage"))
 const TestPage = lazy(() => import("@/pages/TestPage"))
 
@@ -29,6 +30,11 @@ class RouterConfig {
 			path: "/character",
 			component: <CharactersPage />,
 			slug: "character",
+		},
+		{
+			path: "/create",
+			component: <CreateGamePage />,
+			slug: "create",
 		},
 		{
 			path: "/battle",

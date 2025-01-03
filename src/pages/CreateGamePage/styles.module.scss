@@ -1,0 +1,65 @@
+@use "@/utils/functions.scss" as *;
+
+.create {
+	display: flex;
+	flex-direction: column;
+	height: 100vh;
+
+	&__head {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: toRem(28px);
+		margin-bottom: toRem(34px);
+	}
+
+	&__title {
+		margin-top: toRem(62px);
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		height: 100%;
+		text-align: center;
+	}
+
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: end;
+		position: relative;
+		height: toRem(468.5px);
+
+		background-image: url("@/assets/char-choose-bg.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-position-y: bottom;
+	}
+
+	&__imgbox {
+		position: relative;
+		height: 100%;
+		width: 100%;
+	}
+
+	&__image {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: contain;
+	}
+
+	&__btn {
+		position: absolute;
+		bottom: -10%;
+	}
+
+	&__textbox {
+		margin-top: auto;
+		padding: toRem(38px) toRem(28px);
+	}
+}

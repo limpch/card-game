@@ -9,6 +9,7 @@ import char2 from "@/assets/players/temp/char_2.png"
 import char3 from "@/assets/players/temp/char_3.png"
 import { CharacterInfo } from "@/components/CharacterInfo"
 import { Button } from "@/components/ui/Button"
+import { Link } from "react-router-dom"
 
 interface SliderProps {}
 
@@ -41,7 +42,11 @@ export const Slider: FC<SliderProps> = () => {
 						className={classes.slider__slide}
 					>
 						<div className={classes.slider__imgbox}>
-							<img className={classes.slider__image} src={charData[currentIndex].src} alt="" />
+							<img
+								className={classes.slider__image}
+								src={charData[currentIndex].src}
+								alt="character"
+							/>
 						</div>
 						<div>
 							<CharacterInfo />
@@ -57,7 +62,9 @@ export const Slider: FC<SliderProps> = () => {
 					<ChevronNext width={54.53} height={66.87} />
 				</button>
 			</div>
-			<Button>Выбрать</Button>
+			<Link to="/create">
+				<Button>Выбрать</Button>
+			</Link>
 		</div>
 	)
 }

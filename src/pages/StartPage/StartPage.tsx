@@ -29,9 +29,11 @@ export const StartPage: FC<StartPageProps> = ({}) => {
 						Быстрая игра
 					</Button>
 				</Link>
-				<Button w={"100%"} maw={rem("400px")} size="lg" onClick={createRoom}>
-					Создать игру
-				</Button>
+				<Link to="/create">
+					<Button w={"100%"} maw={rem("400px")} size="lg" onClick={createRoom}>
+						Создать игру
+					</Button>
+				</Link>
 				<Link to="/battle">
 					<Button w={"100%"} maw={rem("400px")} size="lg">
 						Присоединиться
