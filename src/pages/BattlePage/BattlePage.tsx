@@ -4,6 +4,7 @@ import { CardsHolder } from "@/components/game/CardsHolder"
 import { Player } from "@/components/game/Player"
 import { Card } from "@/components/game/Card"
 import { Enemy } from "@/components/game/Enemy"
+import { Action } from "@/components/game/Action"
 
 const cardsMock: ICardsMock[] = [
 	{
@@ -107,6 +108,7 @@ export const BattlePage = () => {
 				</Card>
 			</div>
 			<CardsHolder cardsMock={cardsMock} />
+			<Action />
 		</div>
 	)
 }

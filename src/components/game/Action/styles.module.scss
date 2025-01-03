@@ -1,0 +1,42 @@
+@use "@/utils/functions.scss" as *;
+
+.action {
+	position: absolute;
+	display: flex;
+	align-items: center;
+	height: 100%;
+	width: 100%;
+
+	&__container {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: end;
+		height: toRem(312px);
+		width: 100%;
+	}
+
+	&__card {
+		position: absolute;
+		top: 0;
+	}
+
+	&__description {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		height: 249px;
+		width: 100%;
+		background-image: url("@/assets/action-bg.png");
+		background-repeat: no-repeat;
+		background-position: center;
+		background-position-y: bottom;
+	}
+
+	&__textbox {
+		transform: rotate(-8deg);
+		text-align: center;
+	}
+}

@@ -7,7 +7,7 @@ import ChevronPrev from "@/assets/icons/chevron-prev.svg?react"
 import char1 from "@/assets/players/temp/char_1.png"
 import char2 from "@/assets/players/temp/char_2.png"
 import char3 from "@/assets/players/temp/char_3.png"
-import { CharacterInfo } from "@/components/CharacterInfo"
+import { CharacterInfo } from "@/components/game/CharacterInfo"
 import { Button } from "@/components/ui/Button"
 import { Link } from "react-router-dom"
 
