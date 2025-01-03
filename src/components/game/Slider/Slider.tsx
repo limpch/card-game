@@ -8,6 +8,7 @@ import char1 from "@/assets/players/temp/char_1.png"
 import char2 from "@/assets/players/temp/char_2.png"
 import char3 from "@/assets/players/temp/char_3.png"
 import { CharacterInfo } from "@/components/CharacterInfo"
+import { Button } from "@/components/ui/Button"
 
 interface SliderProps {}
 
@@ -56,6 +57,7 @@ export const Slider: FC<SliderProps> = () => {
 					<ChevronNext width={54.53} height={66.87} />
 				</button>
 			</div>
+			<Button>Выбрать</Button>
 		</div>
 	)
 }
