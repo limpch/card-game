@@ -2,7 +2,7 @@ import classes from "./styles.module.scss"
 import { ICardsMock } from "@/types/game"
 import { CardsHolder } from "@/components/game/CardsHolder"
 import { Player } from "@/components/game/Player"
-import { Card } from "@/components/game/Card"
+import { Card, ClearCard } from "@/components/game/Card"
 import { Enemy } from "@/components/game/Enemy"
 import { Action } from "@/components/game/Action"
 
@@ -103,12 +103,9 @@ export const BattlePage = () => {
 			<Enemy />
 			<Player battle={true} />
 			<div className={classes.battle__deck}>
-				<Card data={{ type: "disable" }} index={0}>
-					16/20
-				</Card>
+				<ClearCard type="dark">16/20</ClearCard>
 			</div>
 			<CardsHolder cardsMock={cardsMock} />
-			<Action />
 		</div>
 	)
 }

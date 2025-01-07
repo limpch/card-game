@@ -52,7 +52,7 @@ export const Button: FC<ButtonProps> = ({
 				type="button"
 				onClick={onClick}
 				style={{
-					backgroundColor: colors[bg],
+					backgroundColor: disable ? colors["shadowBlue"] : colors[bg],
 					color: colors[c],
 					fontSize: buttonSizes[size],
 					padding: p ? p : buttonPadding[size],

@@ -4,14 +4,18 @@
 	display: flex;
 	flex-direction: column;
 	height: 100vh;
-	padding-bottom: toRem(107px);
+	max-height: 100vh;
+	overflow: hidden;
+
+	padding-bottom: toRem(120px);
 
 	&__head {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		height: toRem(213px);
+		flex: 0 0 toRem(213px);
 		gap: toRem(28px);
+
 		margin-bottom: toRem(34px);
 	}
 
@@ -29,12 +33,13 @@
 		bottom: 0;
 		left: 0;
 		width: 100%;
-		height: fit-content;
-		padding: toRem(32px) toRem(39px);
+		padding: toRem(39px) toRem(32px);
 
 		display: flex;
 		justify-content: center;
 		gap: toRem(18px);
+
+		flex: 0 0 100px;
 	}
 
 	&__counter {
@@ -59,5 +64,15 @@
 			transform: skew(31deg) rotate(0deg) scale(0.9, 1.1);
 			padding: toRem(12px) toRem(24px);
 		}
+	}
+}
+
+.subWindows {
+	display: flex;
+	overflow: hidden;
+
+	& > div {
+		flex: 0 0 100%;
+		position: relative;
 	}
 }

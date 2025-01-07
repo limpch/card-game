@@ -5,9 +5,9 @@ const HomePage = lazy(() => import("@/pages/HomePage"))
 const StartPage = lazy(() => import("@/pages/StartPage"))
 const StoragePage = lazy(() => import("@/pages/StoragePage"))
 const CharactersPage = lazy(() => import("@/pages/CharactersPage"))
-const CreateGamePage = lazy(() => import("@/pages/CreateGamePage"))
+const RoomPage = lazy(() => import("@/pages/RoomPage"))
+const ConnectToRoomPage = lazy(() => import("@/pages/ConnectToRoomPage"))
 const BattlePage = lazy(() => import("@/pages/BattlePage"))
-const TestPage = lazy(() => import("@/pages/TestPage"))
 
 class RouterConfig {
 	routes: IRoute[] = [
@@ -32,19 +32,19 @@ class RouterConfig {
 			slug: "character",
 		},
 		{
-			path: "/create",
-			component: <CreateGamePage />,
-			slug: "create",
+			path: "/room",
+			component: <RoomPage />,
+			slug: "room",
+		},
+		{
+			path: "/connect",
+			component: <ConnectToRoomPage />,
+			slug: "connect",
 		},
 		{
 			path: "/battle",
 			component: <BattlePage />,
 			slug: "battle",
-		},
-		{
-			path: "/test",
-			component: <TestPage />,
-			slug: "test",
 		},
 	]
 

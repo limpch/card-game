@@ -6,10 +6,14 @@ import { ScrollArea } from "@/components/ui/ScrollArea"
 import { useState } from "react"
 import Deck from "@/components/game/Deck"
 import Storage from "@/components/game/Storage"
+import { motion } from "motion/react"
+import { useUserState } from "@/state/user.state"
 
 export const StoragePage = () => {
-	const [cards, setCards] = useState(8)
-	const [page, setPage] = useState(0)
+	const deck = useUserState(state => state.user?.decks[0] || null)
+	const [page, setPage] = useState<"deck" | "storage">("deck")
+
+	if (!deck) return <div>Loading...</div>
 
 	return (
 		<div className={classes.storage}>
@@ -20,29 +24,39 @@ export const StoragePage = () => {
 				</div>
 				<div className={classes.storage__tabs}>
 					<Button
-						onClick={() => {
-							setPage(0)
-						}}
-						bg={page === 0 ? "primaryLight" : "shadowBlue"}
+						onClick={() => setPage("deck")}
+						bg={page === "deck" ? "primaryLight" : "shadowBlue"}
 					>
 						Колода
 					</Button>
 					<Button
-						onClick={() => {
-							setPage(1)
-						}}
-						bg={page === 1 ? "primaryLight" : "shadowBlue"}
+						onClick={() => setPage("storage")}
+						bg={page === "storage" ? "primaryLight" : "shadowBlue"}
 					>
 						Склад
 					</Button>
 				</div>
 			</div>
-			<ScrollArea>{page === 0 ? <Deck /> : <Storage />}</ScrollArea>
+			<div className={classes.subWindows}>
+				<motion.div animate={{ x: page === "deck" ? 0 : "-100%" }}>
+					<ScrollArea>
+						<Deck cards={deck.cards} />
+					</ScrollArea>
+				</motion.div>
+				<motion.div animate={{ x: page === "storage" ? "-100%" : 0 }}>
+					<ScrollArea>
+						<Storage />
+					</ScrollArea>
+				</motion.div>
+			</div>
 			<div className={classes.storage__confirm}>
-				<div className={`${classes.storage__counter} ${cards < 20 && classes.error}`}>
-					<p>{cards}/20</p>
+				<div className={`${classes.storage__counter} ${deck.cards.length < 20 && classes.error}`}>
+					<p>{deck.cards.length}/20</p>
 				</div>
-				<Button bg={cards < 20 ? "shadowBlue" : "primaryLight"} disable={cards !== 20}>
+				<Button
+					bg={deck.cards.length < 20 ? "shadowBlue" : "primaryLight"}
+					disable={deck.cards.length !== 20}
+				>
 					Подтвердить
 				</Button>
 			</div>

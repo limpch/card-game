@@ -1,0 +1,26 @@
+@use "@/utils/functions.scss" as *;
+
+.container {
+	display: flex;
+	gap: 8px;
+
+	margin-bottom: toRem(60px);
+
+	input {
+		border: none;
+		background: none;
+		outline: none;
+
+		text-align: center;
+		font-size: 40px;
+		font-weight: 700;
+
+		color: #fff;
+		width: 100%;
+		letter-spacing: 5px;
+
+		&::placeholder {
+			color: #fff;
+		}
+	}
+}

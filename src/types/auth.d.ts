@@ -1,3 +1,5 @@
+import { IUserDeck } from "./deck"
+
 export interface ILoginResponse {
 	token: string
 	user: IUser

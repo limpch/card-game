@@ -11,8 +11,7 @@ export const Action: FC<ActionProps> = ({}) => {
 			<div className={classes.action__container}>
 				<div className={classes.action__card}>
 					<Card
-						index={0}
-						data={{
+						card={{
 							type: "hit",
 							points: 10,
 							stats: [

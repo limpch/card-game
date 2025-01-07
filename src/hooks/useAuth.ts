@@ -5,6 +5,7 @@ import { wss } from "@/wss/wss"
 import { useEffect } from "react"
 
 export const useAuth = () => {
+	const isLoading = useUserState(state => state.isLoading)
 	const setLoading = useUserState(state => state.setLoading)
 
 	const getUser = useUserState(state => state.getUser)
@@ -24,4 +25,6 @@ export const useAuth = () => {
 	useEffect(() => {
 		getData()
 	}, [])
+
+	return { isLoading }
 }

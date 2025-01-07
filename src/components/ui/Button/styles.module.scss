@@ -11,6 +11,8 @@
 
 		transform: skewX(-41deg) rotate(-8deg);
 
+		transition: all 0.3s ease;
+
 		p {
 			transform: skew(31deg) rotate(0deg) scale(0.8, 1.1);
 			padding-inline: 8px;

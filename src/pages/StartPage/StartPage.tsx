@@ -17,6 +17,10 @@ export const StartPage: FC<StartPageProps> = ({}) => {
 		navigate(`/room`)
 	}
 
+	const connectToRoom = () => {
+		navigate(`/connect`)
+	}
+
 	return (
 		<div className={classes.start}>
 			<Navigation />
@@ -34,11 +38,9 @@ export const StartPage: FC<StartPageProps> = ({}) => {
 						Создать игру
 					</Button>
 				</Link>
-				<Link to="/battle">
-					<Button w={"100%"} maw={rem("400px")} size="lg">
-						Присоединиться
-					</Button>
-				</Link>
+				<Button w={"100%"} maw={rem("400px")} size="lg" onClick={connectToRoom}>
+					Присоединиться
+				</Button>
 			</div>
 		</div>
 	)

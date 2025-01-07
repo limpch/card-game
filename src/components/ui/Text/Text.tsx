@@ -9,6 +9,7 @@ interface TextProps {
 	fw?: number
 	c?: TColors
 	lh?: string | number
+	mb?: string | number
 }
 
 export const Text: FC<TextProps> = ({
@@ -18,11 +19,18 @@ export const Text: FC<TextProps> = ({
 	fw = 700,
 	c = "primaryLight",
 	lh = 1,
+	mb,
 }) => {
 	return (
 		<div
 			className={`${classes.textbox} ${classes[`textbox_${type}`]}`}
-			style={{ fontSize: rem(fz), color: colors[c], lineHeight: lh, fontWeight: fw }}
+			style={{
+				fontSize: rem(fz),
+				color: colors[c],
+				lineHeight: lh,
+				fontWeight: fw,
+				marginBottom: mb ? rem(mb) : 0,
+			}}
 		>
 			<p>{children}</p>
 		</div>

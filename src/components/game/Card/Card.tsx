@@ -1,46 +1,52 @@
-import { FC } from "react"
+import { FC, TouchEvent, useRef } from "react"
 import classes from "./styles.module.scss"
-import { rem } from "@/config/styles.config"
-import { colors, TColors } from "@/config/styles.config"
-import { ICardData } from "@/types/game"
-
+import { colors } from "@/config/styles.config"
 import { Shadow } from "@/components/ui/Shadow"
 import { CardStats } from "@/components/game/CardStats/CardStats"
-
-import DotIcon from "@/assets/icons/dot.svg?react"
-import HitIcon from "@/assets/icons/hit.svg?react"
-import HealIcon from "@/assets/icons/heal.svg?react"
+import { ICard } from "@/types/cards"
 import CardDecor from "@/assets/icons/card-decor.svg?react"
 
-const cardColors = {
-	default: "primaryBlue",
-	heal: "primaryRed",
-	dot: "primaryGreen",
-	hit: "primaryBlue",
-	darkBg: "primaryDark",
-	disable: "shadowBlue",
-} as const
-
 interface CardProps {
-	data: ICardData
-	children?: React.ReactNode
-	index: number
+	card: ICard
 }
 
-export const Card: FC<CardProps> = ({ data, children, index }) => {
-	const cardColor: TColors = data ? cardColors[data.type] : "primaryBlue"
+export const Card: FC<CardProps> = ({ card }) => {
+	const refTimer = useRef<NodeJS.Timeout | null>(null)
 
-	const clickHandler = () => {
-		console.log("click", index)
+	const touchStart = () => {
+		let isLongTouch = false
+		refTimer.current = setTimeout(() => {
+			console.log("Long touch detected")
+			isLongTouch = true
+			// ADD DRAG AND DROP TO CARD
+		}, 200)
+
+		const touchEnd = () => {
+			if (refTimer.current) clearTimeout(refTimer.current)
+			refTimer.current = null
+
+			if (!isLongTouch) {
+				// ADD OPEN ACTION TO CARD
+				console.log("Open card action")
+			}
+
+			document.removeEventListener("touchend", touchEnd)
+		}
+
+		document.addEventListener("touchend", touchEnd)
+	}
+
+	const touchEnd = (e: TouchEvent) => {
+		e.preventDefault()
 	}
 
 	return (
-		<div className={classes.card} onClick={clickHandler}>
+		<div className={classes.card} onTouchStart={touchStart} onTouchEnd={touchEnd}>
 			<Shadow type={"boxShadow"}>
 				<div
 					className={classes.card__container}
 					style={{
-						backgroundColor: colors[cardColor],
+						backgroundColor: colors[card.color],
 						color: colors["primaryLight"],
 					}}
 				>
@@ -48,25 +54,13 @@ export const Card: FC<CardProps> = ({ data, children, index }) => {
 						<CardDecor width={"100%"} height={"100%"} />
 					</div>
 
-					{data.type === "default" || data.type === "disable" ? (
-						<div className={classes.card__textbox}>
-							<p className={classes.card__text}>{children}</p>
-						</div>
-					) : (
-						<div className={classes.card__icon}>
-							<Shadow c={cardColor} type={"filter"}>
-								{data.type === "dot" ? (
-									<DotIcon width={rem("39")} height={rem("60px")} />
-								) : data.type === "hit" ? (
-									<HitIcon width={rem("42.19px")} height={rem("53.04px")} />
-								) : (
-									<HealIcon width={rem("42.77px")} height={rem("42.77px")} />
-								)}
-							</Shadow>
-						</div>
-					)}
+					<div className={classes.card__icon}>
+						<Shadow c={card.color} type={"filter"}>
+							<img src={card.icon} alt={card.name} />
+						</Shadow>
+					</div>
 
-					{data.stats && <CardStats data={data} />}
+					{/* {card.stats && <CardStats data={card} />} */}
 				</div>
 			</Shadow>
 		</div>

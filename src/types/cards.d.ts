@@ -1,9 +1,11 @@
+import { TColors } from "@/config/styles.config"
+
 export interface ICardBase {
 	id: number
 	icon: string
 	name: string
 	description: string
-	color: string
+	color: TColors
 	specifications: string
 	price: number
 	active: boolean
@@ -13,25 +15,28 @@ export interface ICard extends ICardBase {
 	specifications: ICardSpecifications
 }
 
-export type TCardEffects =
-	| "fire"
-	| "water"
-	| "poison"
-	| "bleed"
-	| "blind"
-	| "stun"
-	| "heal"
-	| "shield"
-	| "hit"
+export interface ICardSpecifications {
+	ap: number
 
-export interface ICardEffect {
-	type: TCardEffects
-	damage: [number, number] | null
-	duration: number
-	value: number
+	onTarget?: ICastInfo
+
+	onCaster?: ICastInfo
 }
 
-export interface ICardSpecifications {
-	cost: number
-	effect: ICardEffect[]
+export interface ICastInfo {
+	actions: ICardAction[]
+	effects: ICardEffect[]
+}
+
+export interface ICardAction {
+	action: TActions
+	value: number
+	type?: TEffects
+	ignoreArmor?: boolean
+}
+
+export interface ICardEffect {
+	effect: TEffects
+	duration: number
+	value: number
 }

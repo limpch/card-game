@@ -3,10 +3,9 @@
 .deck {
 	position: relative;
 	display: flex;
-	align-items: center;
 	justify-content: center;
 
-	margin: toRem(38px) toRem(32px);
+	padding: toRem(38px) toRem(32px) 0;
 
 	&__container {
 		max-width: toRem(375px);
