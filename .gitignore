@@ -1,0 +1,7 @@
+node_modules
+build
+applications.json
+fields.json
+DATA
+*.js
+src/db.ts
