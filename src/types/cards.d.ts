@@ -5,7 +5,7 @@ export interface ICardBase {
 	icon: string
 	name: string
 	description: string
-	color: TColors
+	color: string
 	specifications: string
 	price: number
 	active: boolean

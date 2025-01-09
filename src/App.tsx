@@ -3,6 +3,8 @@ import { routerConfig } from "./config/routes"
 import { Suspense } from "react"
 import { AnimatePresence } from "motion/react"
 import { Layout } from "./components/Layout"
+import { AdminLayout } from "./components/admin/AdminLayout"
+import { adminRouterConfig } from "./config/admin_routes"
 
 const App = () => {
 	return (
@@ -33,6 +35,16 @@ const AnimatedRoutes = () => {
 								/>
 							))}
 						</Route>
+					))}
+				</Route>
+
+				<Route path="/admin" element={<AdminLayout />}>
+					{adminRouterConfig.routes.map(route => (
+						<Route
+							key={route.slug}
+							path={"/admin/" + route.path}
+							element={<Suspense fallback={"loading..."}>{route.component}</Suspense>}
+						/>
 					))}
 				</Route>
 			</Routes>
