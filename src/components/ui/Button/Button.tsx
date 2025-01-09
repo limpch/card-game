@@ -1,48 +1,67 @@
-import { FC } from 'react';
-import classes from './styles.module.scss';
-import { colors, TColors, rem } from '@/config/styles.config';
+import { FC } from "react"
+import classes from "./styles.module.scss"
+import { colors, TColors, rem } from "@/config/styles.config"
 
 interface ButtonProps {
-	children: React.ReactNode;
-	size?: TButtonSizes;
-	bg?: TColors;
-	c?: TColors;
+	children: React.ReactNode
+	size?: TButtonSizes
+	bg?: TColors
+	c?: TColors
+	p?: string
+	w?: string
+	maw?: string
+	disable?: boolean
+	onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
 const buttonSizes = {
-	sm: rem('12px'),
-	md: rem('19px'),
-	lg: rem('38px'),
-};
+	sm: rem("12px"),
+	md: rem("19px"),
+	lg: rem("38px"),
+}
 
 const buttonPadding = {
-	sm: rem('12px'),
-	md: rem('12px'),
-	lg: rem('16px'),
-};
+	sm: rem("12px"),
+	md: rem("12px"),
+	lg: rem("16px"),
+}
 
-export type TButtonSizes = keyof typeof buttonSizes;
-export type TbuttonPadding = keyof typeof buttonSizes;
+export type TButtonSizes = keyof typeof buttonSizes
+export type TbuttonPadding = keyof typeof buttonSizes
 
 export const Button: FC<ButtonProps> = ({
 	children,
-	size = 'md',
-	bg = 'primaryLight',
-	c = 'primaryDark',
+	size = "md",
+	bg = "primaryLight",
+	c = "primaryDark",
+	p,
+	w,
+	maw,
+	disable = false,
+	onClick,
 }) => {
 	return (
-		<div className={classes.button}>
+		<div
+			className={classes.button}
+			style={{
+				width: w ? w : "fit-content",
+				maxWidth: maw ? maw : "none",
+			}}
+		>
 			<button
-				type='button'
+				type="button"
+				onClick={onClick}
 				style={{
 					backgroundColor: colors[bg],
 					color: colors[c],
 					fontSize: buttonSizes[size],
-					padding: buttonPadding[size],
+					padding: p ? p : buttonPadding[size],
+					width: w ? w : "fit-content",
 				}}
+				disabled={disable}
 			>
 				<p>{children}</p>
 			</button>
 		</div>
-	);
-};
+	)
+}

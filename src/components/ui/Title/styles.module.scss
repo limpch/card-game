@@ -1,0 +1,22 @@
+@use "@/utils/functions.scss" as *;
+
+.title {
+	background-color: #0e82ee;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+	line-height: 1;
+	width: fit-content;
+
+	transform: skewX(-41deg) rotate(-8deg);
+
+	h1 {
+		font-size: toRem(38px);
+		color: #fff;
+		font-weight: 700;
+		transform: skew(31deg) rotate(0deg) scale(0.9, 1.1);
+		padding: toRem(18px) toRem(24px);
+		filter: drop-shadow(-4px 4px #0d1625);
+	}
+}

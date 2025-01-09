@@ -1,0 +1,51 @@
+@use "@/utils/functions.scss" as *;
+
+.home {
+	height: 100vh;
+
+	&__navigation {
+		position: absolute;
+		z-index: 10;
+		width: fit-content;
+
+		top: toRem(32px);
+		left: toRem(38px);
+	}
+	&__logobox {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		padding-top: toRem(76px);
+	}
+	&__start {
+		position: fixed;
+		left: 0;
+		top: 43vh;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	&__character {
+		position: fixed;
+		bottom: toRem(39px);
+		right: toRem(48px);
+	}
+	&__deck {
+		position: fixed;
+		width: toRem(139.31px);
+		height: toRem(186.85px);
+		bottom: 15%;
+		right: toRem(36px);
+	}
+
+	&__card {
+		position: fixed;
+		@for $i from 1 through 3 {
+			&:nth-child(#{$i}) {
+				transform: translate(#{($i - 1) * 16px}, #{($i - 1) * 9px});
+			}
+		}
+	}
+}

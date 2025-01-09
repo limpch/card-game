@@ -1,0 +1,66 @@
+@use "@/utils/functions.scss" as *;
+
+.stat {
+	position: relative;
+	color: #ffffff;
+	border: 2px solid #0d1625;
+	padding: 3px;
+	background-color: #053585;
+	transform: skewX(-18deg);
+
+	box-shadow: -8px 8px 0px 0px #0d1625;
+
+	&__bar {
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 80%;
+	}
+
+	&__container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		gap: toRem(7px);
+		transform: skewX(18deg);
+	}
+}
+
+.health {
+	&.stat {
+		width: toRem(200px);
+		height: toRem(32px);
+	}
+	.stat {
+		&__value {
+			font-size: toRem(19px);
+			font-weight: 700;
+			line-height: 1;
+		}
+
+		&__bar {
+			border-right: 8px solid #ffbad3;
+			background-color: #c71f5d;
+		}
+	}
+}
+
+.shields {
+	&.stat {
+		width: toRem(140px);
+		height: toRem(22px);
+	}
+	.stat {
+		&__value {
+			font-size: toRem(13px);
+			font-weight: 700;
+			line-height: 1;
+		}
+
+		&__bar {
+			border-right: 6px solid #b6dcff;
+			background-color: #0e82ee;
+		}
+	}
+}

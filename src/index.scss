@@ -1,4 +1,4 @@
-@use "utils/functions" as *;
+@use "@/utils/functions.scss" as *;
 
 @import url("https://fonts.googleapis.com/css?family=Rubik:300,regular,500,600,700,800,900,300italic,italic,500italic,600italic,700italic,800italic,900italic");
 
@@ -13,6 +13,7 @@ body {
 	font-size: toRem(16px);
 	background-color: #0d1625;
 	overflow: hidden;
+	user-select: none;
 }
 
 button {
@@ -22,4 +23,8 @@ button {
 	font-weight: inherit;
 	font-size: inherit;
 	color: inherit;
+}
+
+a {
+	text-decoration: none;
 }

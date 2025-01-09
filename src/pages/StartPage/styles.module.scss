@@ -1,0 +1,24 @@
+@use "@/utils/functions.scss" as *;
+
+.start {
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+
+	&__title {
+		position: absolute;
+		top: toRem(56px);
+		margin-inline: auto;
+	}
+
+	&__buttons {
+		display: flex;
+		flex-direction: column;
+		gap: toRem(18px);
+		width: 100%;
+		padding-inline: toRem(12px);
+		max-width: toRem(412px);
+	}
+}

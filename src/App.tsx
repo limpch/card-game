@@ -1,15 +1,30 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom"
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom"
 import { routerConfig } from "./config/routes"
 import { Suspense } from "react"
-import { GameLayout } from "./Layout/GameLayout/GameLayout"
+import { AnimatePresence } from "motion/react"
+import { Layout } from "./components/Layout"
 
 const App = () => {
 	return (
-		<GameLayout>
-			<BrowserRouter>
-				<Routes>
+		<BrowserRouter>
+			<AnimatedRoutes />
+		</BrowserRouter>
+	)
+}
+
+const AnimatedRoutes = () => {
+	const location = useLocation()
+
+	return (
+		<AnimatePresence mode="wait" initial={false}>
+			<Routes location={location} key={location.pathname}>
+				<Route element={<Layout />}>
 					{routerConfig.routes.map(route => (
-						<Route key={route.slug} path={route.path} element={route.component}>
+						<Route
+							key={route.slug}
+							path={route.path}
+							element={<Suspense fallback={"loading..."}>{route.component}</Suspense>}
+						>
 							{route.children?.map(child => (
 								<Route
 									key={child.slug}
@@ -19,9 +34,9 @@ const App = () => {
 							))}
 						</Route>
 					))}
-				</Routes>
-			</BrowserRouter>
-		</GameLayout>
+				</Route>
+			</Routes>
+		</AnimatePresence>
 	)
 }
 

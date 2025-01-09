@@ -1,0 +1,17 @@
+.slider {
+	position: relative;
+	height: 100vh;
+	&__navigation {
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		margin: auto;
+		top: 50%;
+		left: 0;
+	}
+
+	&__image {
+		position: absolute;
+	}
+}
